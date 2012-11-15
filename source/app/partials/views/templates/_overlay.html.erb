@@ -1,0 +1,38 @@
+<script id="overlay_content_tmpl" type="text/html">
+	{{#data}}
+	<h3><strong>{{title}}</strong></h3>
+	{{#post_image_420}}
+	<img src="{{post_image_420}}" alt="{{title}}" />
+	{{/post_image_420}}
+	{{^post_image_420}}
+	{{#post_image}}
+	<img src="{{post_image}}" alt="{{title}}" />
+	{{/post_image}}
+	{{/post_image_420}}
+	<p class="feed-item-description">{{{post_media_body}}}</p>
+	<p class="feed-item-user">
+		From {{{post_media_user}}} via
+		<a href="{{{post_media_url}}}" target="_blank">
+		{{#twitter}}
+		Twitter
+		{{/twitter}}
+		{{#instagram}}
+		Instagram
+		{{/instagram}}
+		</a>
+	</p>
+	{{/data}}
+</script>
+
+<script id="overlay_cheer_tmpl" type="text/html">
+{{#data}}
+	<p>{{cheer_count}} People Cheered This</p>
+{{/data}}
+</script>
+
+<script id="overlay_tip_tmpl" type="text/html">
+{{#data}}
+	<p>{{tip_body}}</p>
+	<h4>{{post_media_user}}
+{{/data}}
+</script>

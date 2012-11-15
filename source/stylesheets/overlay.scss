@@ -1,0 +1,52 @@
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+    
+  
+}
+#overlay-content {
+  position: inherit;
+  z-index: 3000;
+  background: $colorWhite;
+}
+
+#overlay-cover {
+  position: inherit;
+  z-index: 2000;
+  width: 100%;
+  height: 100%;
+  background: $colorWhite * .2;
+  opacity: .25;
+
+}
+
+#overlay-cheer {
+  position: relative;
+  clear: both;
+
+  #overlay-cheer-button {
+    float: left;
+  }
+
+  #overlay-cheer-template {
+    float: left;
+  }
+}
+
+#overlay-tip {
+  position: relative;
+  clear: both;
+
+  #overlay-tip-form {
+    clear: both;
+  }
+
+  #overlay-tip-template {
+    clear: both;
+  }
+}

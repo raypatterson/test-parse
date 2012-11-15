@@ -1,0 +1,75 @@
+<div id="main-view">
+  <article id="login-view">
+    <form class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label" for="input-email">Email</label>
+        <div class="controls">
+          <input type="text" name="email" value="" placeholder="Must be @akqa.com" id="email">
+        </div>
+      </div>        
+      <div class="control-group">
+        <label class="control-label" for="input-password">Password</label>
+        <div class="controls">
+          <input type="password" name="password" value="" placeholder="Not strict" id="password">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="input-name">Name</label>
+        <div class="controls">
+          <input type="text" name="name" value="" placeholder="Not required" id="name">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="input-role">Role</label>
+        <div class="controls" id="input-role">
+          <label class="radio">
+            <input type="radio" name="role" value="show" id="role-show" checked>
+              I would like to show my art.
+          </label>
+          <label class="radio">
+            <input type="radio" name="role" value="help" id="role-help" >
+              I would like to participate.
+          </label>
+          <br/>
+          <button class="btn btn-primary">Done</button>
+        </div>
+      </div>
+    </form>
+    
+  </article>
+  <article id="show-view">
+    <form class="form-horizontal">
+      <h2>Great!<h2> 
+      <fieldset>
+        <h3>Can you describe your piece?</h3>
+        <textarea class="span10" rows="3" placeholder="Photos of my cat that I took with my phone."></textarea>
+        <h3>Do you have any requirements to display your piece?</h3>
+        <textarea class="span10" rows="3" placeholder="10000 volts, solid gold piano, Little Richard."></textarea>
+        <h3>Do you need any support to create your piece?</h3>
+        <textarea class="span10" rows="3" placeholder="Does anyone know how to forge $20 bills?"></textarea>
+      </fieldset>
+      <button class="btn btn-primary horizontal" type="submit">Done</button>
+    </form>
+  </article>
+  <article id="help-view">
+    <form class="form-horizontal">
+      <h2>That's cool! You can still get involved!<h2> 
+      <h3>Are you able to help:</h3>
+      <fieldset>
+        <label class="checkbox horizontal">
+          <input type="checkbox" name="artist" value="artist">An artist with their piece?
+        </label>
+        <label class="checkbox horizontal">
+          <input type="checkbox" name="curate" value="curate">Organize and curate the show?
+        </label>
+        <label class="checkbox horizontal">
+          <input type="checkbox" name="social" value="social">Spread the word using social channels?
+        </label>
+        <label class="checkbox horizontal">
+          <input type="checkbox" name="online" value="online">Create promotional materials for online/offline?
+        </label>
+      </fieldset>
+      <button class="btn btn-primary horizontal" type="submit">Done</button>
+    </form>
+  </article>
+</div>

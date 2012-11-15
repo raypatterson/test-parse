@@ -1,0 +1,27 @@
+{
+	"root": {
+		"item_data": {
+			"item": {
+				"fragment": "",
+				"items": [
+					{
+						"item": {
+							"fragment": "mymoments",
+							"title": "My Moments"
+						}
+					}, {
+						"item": {
+							"fragment": "twitter",
+							"title": "Twitter"
+						}
+					}, {
+						"item": {
+							"fragment": "instagram",
+							"title": "Instagram"
+						}
+					}
+				]
+			}
+		}
+	}
+}

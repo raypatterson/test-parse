@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Segoe UI";
+  src: local("Segoe UI"), 
+  url("/fonts/SegoeUI-Regular-final.woff") format("woff"),
+  url("/fonts/SegoeUI-Regular-final.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Segoe UI Light";
+  src: local("Segoe UI Light"), 
+  url("/fonts/SegoeUI-Light-final.woff") format("woff"),
+  url("/fonts/SegoeUI-Light-final.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$fontFamilyRegular: 'Segoe UI', Arial, Helvetica, sans-serif;
+$fontFamilyLight: 'Segoe UI Light', Arial, Helvetica, sans-serif;

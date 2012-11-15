@@ -1,0 +1,66 @@
+defaults:
+  port: "8888"
+  branch: "master"
+  heroku: "ops"
+
+apps:
+  development: "dev-doyoulikeart"
+  review: "review-doyoulikeart"
+  staging: "staging-doyoulikeart"
+  production: "doyoulikeart"
+  
+collaborators:
+  - "ray.patterson@akqa.com"
+  
+site:
+  title: "Do You Like Art?"
+  name: "Do You Like Art?"
+  description: "If you like art, you came to the right place."
+  keywords: "Do, You, Like, Art"
+  protocol: "http"
+  
+environments:
+  local:
+    auth:
+      username: "admin"
+      password: "admin"
+    urls:
+      desktop: "localhost:8888"
+      tablet: "localhost:8888"
+      mobile: "localhost:9999"
+  
+  development:
+    branch: "develop"
+    urls:
+      desktop: "dev-doyoulikeart.herokuapp.com"
+      tablet: "dev-doyoulikeart.herokuapp.com"
+      mobile: "m-dev-doyoulikeart.herokuapp.com"
+  
+  review:
+    branch: "develop"
+    auth:
+      username: "admin"
+      password: "admin"
+    urls:
+      desktop: "review-doyoulikeart.herokuapp.com"
+      tablet: "review-doyoulikeart.herokuapp.com"
+      mobile: "m-review-doyoulikeart.herokuapp.com"
+  
+  staging:
+    branch: "develop"
+    auth:
+      username: "admin"
+      password: "admin"
+    urls:
+      ignore: "origin.staging.doyoulikeart.com"
+      desktop: "staging.doyoulikeart.com"
+      tablet: "staging.doyoulikeart.com"
+      mobile: "m.staging.doyoulikeart.com"
+  
+  production:
+    branch: "master"
+    urls:
+      ignore: "origin.doyoulikeart.com"
+      desktop: "doyoulikeart.com"
+      tablet: "doyoulikeart.com"
+      mobile: "m.doyoulikeart.com"

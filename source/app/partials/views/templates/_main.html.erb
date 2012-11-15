@@ -1,0 +1,42 @@
+<script id="main_feed_item_tmpl" type="text/html">
+	{{#data}}
+	<div id="{{entry_id}}" class="feed-item {{service}} {{post_media_handle}}">
+		{{> main_title_tmpl}}
+	</div>
+	{{/data}}
+</script>
+
+<script id="main_title_tmpl" type="text/html">
+	<h3><strong>{{title}}</strong></h3>
+	{{#post_image_320}}
+	<img src="{{post_image_320}}" alt="{{title}}" />
+	{{/post_image_320}}
+	{{^post_image_320}}
+	{{#post_image}}
+	<img src="{{post_image}}" alt="{{title}}" />
+	{{/post_image}}
+	{{/post_image_320}}
+	<p class="feed-item-description">{{{post_media_body}}}</p>
+	<p class="feed-item-user">
+		From {{{post_media_user}}} via
+		<a href="{{{post_media_url}}}" target="_blank">
+		{{#twitter}}
+		Twitter
+		{{/twitter}}
+		{{#instagram}}
+		Instagram
+		{{/instagram}}
+		</a>
+	</p>
+</script>
+
+<script id="main_filter_user_tmpl" type="text/html">
+<select id="filter-user-dropdown">
+	<option value="*">Reset</option>
+
+	{{#data}}
+	<option value=".{{post_media_handle}}">{{post_media_user}}</p></option>
+	{{/data}}
+
+</select>
+</script>
