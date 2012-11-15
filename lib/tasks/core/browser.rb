@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+
 namespace :browser do
   desc "Browser : Open Chrome"
   task :chrome do

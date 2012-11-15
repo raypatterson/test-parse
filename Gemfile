@@ -1,10 +1,12 @@
 source :rubygems
 
+gem "rake"
+
 gem "rack"
 gem "rack-contrib"
 gem "rack-mobile-detect"
 
-gem "middleman", ">=3.0"
+gem "middleman", ">= 3.0.6"
 gem "middleman-smusher"
 
 gem "bootstrap-sass", ">= 2.0"
@@ -12,7 +14,7 @@ gem "bootstrap-sass", ">= 2.0"
 gem "nokogiri"
 
 group :development do
-  gem 'therubyracer'
+  gem "therubyracer"
   gem "heroku"
   gem "thin"
 end

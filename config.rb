@@ -1,5 +1,6 @@
 require 'yaml'
 require 'middleman-smusher'
+require 'bootstrap-sass'
 
 ###
 # Helpers
@@ -90,9 +91,10 @@ configure :build do
   activate :minify_css
   activate :minify_javascript
   activate :relative_assets
-  activate :cache_buster
-  # TODO : [RKP] : Smusher fails if too many images on Heroku
-  activate :smusher
-  activate :gzip
-  activate :asset_hash
+  if $env === $ENV_STAGING || $env === $ENV_PRODUCTION
+    # NOTE : [RKP] : Smusher causes  on Heroku
+    activate :smusher
+    activate :gzip
+    activate :asset_hash
+  end
 end

@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+
 require 'yaml'
 
 @ROOT = File.expand_path "."
