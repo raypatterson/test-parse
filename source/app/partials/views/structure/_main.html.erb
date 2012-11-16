@@ -1,4 +1,9 @@
 <div id="main-view">
+  <!-- 
+  ==========================================================================
+  Login View 
+  ==========================================================================
+  -->
   <article id="login-view">
     <form class="form-horizontal">
       <div class="control-group">
@@ -35,8 +40,24 @@
         </div>
       </div>
     </form>
-    
   </article>
+  <!-- 
+  ==========================================================================
+  Upload View 
+  ==========================================================================
+  -->
+  <article id="upload-view">
+    <form id="form-horizontal" action="upload_file.php" method="post" enctype="multipart/form-data"> 
+      <input type="text" name="moment" value="" placeholder="My Moment" id="moment">
+      <input type="file" style="margin-top: 1em;" name="file" id="file">
+      <button id="fileupload" class="btn btn-primary">Create</button>
+    </form>
+  </article>
+  <!-- 
+  ==========================================================================
+  Show View 
+  ==========================================================================
+  -->
   <article id="show-view">
     <form class="form-horizontal">
       <h2>Great!<h2> 
@@ -51,6 +72,11 @@
       <button class="btn btn-primary horizontal" type="submit">Done</button>
     </form>
   </article>
+  <!-- 
+  ==========================================================================
+  Help View 
+  ==========================================================================
+  -->
   <article id="help-view">
     <form class="form-horizontal">
       <h2>That's cool! You can still get involved!<h2> 

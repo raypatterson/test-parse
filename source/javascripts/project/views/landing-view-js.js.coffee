@@ -1,8 +1,4 @@
-_NS = @__get_project_namespace__()
-_MODELS = @__get_project_namespace__ [ "Models" ]
-_VIEWS = @__get_project_namespace__ [ "Views" ]
-
-_model = undefined
+_VIEWS = @__get_project_namespace__ ['Views']
 
 _setup = ->
   @log 'setup'
@@ -20,25 +16,22 @@ _render = ->
   @log 'render'
   @
 
-class _VIEWS.PieceView extends _VIEWS.BaseView
+class _VIEWS.LandingView extends _VIEWS.BaseView
 
-  className : 'PieceView'
+  className : 'LandingView'
 
   initialize : ( properties, @onReady ) ->
-
+    
     super properties, @onReady
 
     @log 'init'
 
+    _setup.call @
+
     @ready()
-
+    
     @
-
-  addEvents : ->
-    super
-
-    @
-
+    
   render : ->
     _render.call @
     @

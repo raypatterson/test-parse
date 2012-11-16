@@ -1,8 +1,4 @@
-_NS = @__get_project_namespace__()
-_MODELS = @__get_project_namespace__ [ "Models" ]
-_VIEWS = @__get_project_namespace__ [ "Views" ]
-
-_model = undefined
+_VIEWS = @__get_project_namespace__ ['Views']
 
 _setup = ->
   @log 'setup'
@@ -20,9 +16,9 @@ _render = ->
   @log 'render'
   @
 
-class _VIEWS.SupportView extends _VIEWS.BaseView
+class _VIEWS.ShowView extends _VIEWS.BaseView
 
-  className : 'SupportView'
+  className : 'ShowView'
 
   initialize : ( properties, @onReady ) ->
 

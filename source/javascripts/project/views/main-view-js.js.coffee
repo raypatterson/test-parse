@@ -1,8 +1,4 @@
-_NS = @__get_project_namespace__()
-_MODELS = @__get_project_namespace__ [ "Models" ]
-_VIEWS = @__get_project_namespace__ [ "Views" ]
-
-_views = undefined
+_VIEWS = @__get_project_namespace__ ['Views']
 
 class _VIEWS.MainView extends _VIEWS.BaseView
 
@@ -14,18 +10,12 @@ class _VIEWS.MainView extends _VIEWS.BaseView
 
     @log 'init'
 
-    _views = [
-      id : 'login-view'
-      klass : _VIEWS.LoginView
-    ,
-      id : 'piece-view'
-      klass : _VIEWS.PieceView
-    ,
-      id : 'support-view'
-      klass : _VIEWS.SupportView
+    views = [
+      id : 'profile-view'
+      klass : @VIEWS.ProfileView
     ]
 
-    @addViews.call @, _views, => @ready()
+    @addViews.call @, views, => @ready()
     
     @
     

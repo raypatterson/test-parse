@@ -1,0 +1,16 @@
+hook up the 'show' form
+hook up the 'help' form
+
+create landing page
+create profile page
+
+Get started or
+---> Sign in
+
+check login status
+
+if signed in, show profile page
+if signed out, show landing page
+
+profile page must have sign out button
+

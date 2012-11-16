@@ -1,8 +1,4 @@
-_NS = @__get_project_namespace__()
-_MODELS = @__get_project_namespace__ [ "Models" ]
-_VIEWS = @__get_project_namespace__ [ "Views" ]
-
-_mainModel = undefined
+_VIEWS = @__get_project_namespace__ ['Views']
 
 class _VIEWS.FooterView extends _VIEWS.BaseView
 
@@ -14,8 +10,6 @@ class _VIEWS.FooterView extends _VIEWS.BaseView
 
     @log 'init'
     
-    _mainModel = _MODELS.mainModel
-      
     @ready()
     
     @

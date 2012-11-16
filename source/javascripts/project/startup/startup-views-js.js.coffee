@@ -38,7 +38,7 @@ _init = (callback) ->
   if _NS.Config.touchOS is true then $('body').addClass 'touch'
   
   Nimble.series [
-    # _initOverlayView
+    _initOverlayView
     _initHeaderView
     _initMainView
     _initFooterView

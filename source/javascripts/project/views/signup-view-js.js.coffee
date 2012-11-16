@@ -1,9 +1,5 @@
-_NS = @__get_project_namespace__()
-_MODELS = @__get_project_namespace__ [ "Models" ]
-_VIEWS = @__get_project_namespace__ [ "Views" ]
+_VIEWS = @__get_project_namespace__ ['Views']
 _PARSE = @__get_project_namespace__ [ "Helpers", "Parse" ]
-
-_model = undefined
 
 _getProperties = ( $form ) ->
 
@@ -64,9 +60,9 @@ _render = ->
   @log 'render'
   @
 
-class _VIEWS.LoginView extends _VIEWS.BaseView
+class _VIEWS.SignupView extends _VIEWS.BaseView
 
-  className : 'LoginView'
+  className : 'SignupView'
 
   initialize : ( properties, @onReady ) ->
     

@@ -1,7 +1,7 @@
 _NS = @__get_project_namespace__()
-_VIEWS = @__get_project_namespace__ [ "Views" ]
-_MODELS = @__get_project_namespace__ [ "Models" ]
 _HELPERS = @__get_project_namespace__ [ "Helpers" ]
+_MODELS = @__get_project_namespace__ [ "Models" ]
+_VIEWS = @__get_project_namespace__ [ "Views" ]
 
 _setup = ->  
   @ROUTER = _NS.navigationRouter
@@ -17,7 +17,9 @@ class _VIEWS.BaseView extends Backbone.View
   
   className : "BaseView"
   NS : _NS
+  HELPERS : _HELPERS
   MODELS : _MODELS
+  VIEWS : _VIEWS
   visibility : true
     
   initialize : ( properties, @onReady ) ->
