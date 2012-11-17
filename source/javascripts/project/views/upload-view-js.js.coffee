@@ -3,7 +3,6 @@ _VIEWS = @__get_project_namespace__ ['Views']
 _setup = ->
   @log 'setup'
 
-
   $('#file').customFileInput
     button_position : 'right'
 
@@ -40,16 +39,20 @@ class _VIEWS.UploadView extends _VIEWS.BaseView
     
     super properties, @onReady
 
-    @log 'init'
+    @log 'initialize'
+    
+    @
+
+  init : ->
 
     _setup.call @
 
-    @ready()
-    
+    super
+
     @
-    
+
   render : ->
     _render.call @
     @
-    
+
   @

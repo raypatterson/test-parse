@@ -24,7 +24,7 @@ class _VIEWS.ShowView extends _VIEWS.BaseView
 
     super properties, @onReady
 
-    @log 'init'
+    @log 'initialize'
 
     @ready()
 

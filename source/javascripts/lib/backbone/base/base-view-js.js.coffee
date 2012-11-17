@@ -3,14 +3,21 @@ _HELPERS = @__get_project_namespace__ [ "Helpers" ]
 _MODELS = @__get_project_namespace__ [ "Models" ]
 _VIEWS = @__get_project_namespace__ [ "Views" ]
 
+_toTitleCase = ( str ) -> 
+  # FIXME : [RKP] : Obviously I don't 'get' Regex
+  str = str.split('-').join(' ')
+  str = str.replace ( /(?:^|\s)\w/g ), ( match ) -> match.toUpperCase()
+  str = str.split(' ').join('')
+  str
+
 _setup = ->  
   @ROUTER = _NS.navigationRouter
   @EVENTBUS = _NS.eventBus
   @touchOS = _NS.Config.touchOS
-
-_init = ->
   @addProperties()
   @addEvents()
+
+_init = ->
 
 
 class _VIEWS.BaseView extends Backbone.View
@@ -25,14 +32,36 @@ class _VIEWS.BaseView extends Backbone.View
   initialize : ( properties, @onReady ) ->
     super properties, @onReady
 
+    @setup()
+    @init()
+
+    # @log 'initialize'
+
+    @
+
+  setup : ->  
     @className = if @el then "#{@className} ##{@el.id}" or "#{@className} .#{el.className}" else @className
     @log = _NS.log @className
-
-    _setup.call @
-    _init.call @
     
+    @log 'setup'
+
+    @ROUTER = _NS.navigationRouter
+    @EVENTBUS = _NS.eventBus
+    @touchOS = _NS.Config.touchOS
+
+    @addProperties()
+    @addEvents()
+
     @
   
+  init : ->
+    @log 'init'
+
+    if @options.views then @addViews @options.views, => @ready()
+
+    @
+
+
   hide : (speed = 0, delay = 0) ->
     @log 'hide'
     # if @visibility is false then return @
@@ -66,13 +95,15 @@ class _VIEWS.BaseView extends Backbone.View
   addViews : ( views, callback ) ->
     @log 'addViews'
 
+    @log views
+
     i = 0
     I = views.length
 
     items = []
 
-    getFunc = ( ob ) => ( callback ) => 
-        @addView ob.id, ob.klass, -> callback()
+    getFunc = ( view ) => ( callback ) => 
+        @addView view.id, ( -> callback() ), view.views
 
     while i < I
       items.push ( getFunc views[ i ] )
@@ -82,15 +113,19 @@ class _VIEWS.BaseView extends Backbone.View
       
     @
 
-  addView : (id, klass, callback) ->
-    @log "add #{id}"
+  addView : ( id, callback, views ) ->
+    @log "addView --> #{id}"
+
+    KlassName = _toTitleCase id
     
     properties = 
       id : id
       el : $ "##{id}"
 
-    view = new klass properties, ->
-      _VIEWS[id] = view
+    if views then properties.views = views
+
+    view = new @VIEWS[ KlassName ] properties, ->
+      _VIEWS[ id ] = view
       callback?()
       @
       

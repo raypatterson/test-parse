@@ -68,7 +68,7 @@ class _VIEWS.SigninView extends _VIEWS.BaseView
     
     super properties, @onReady
 
-    @log 'init'
+    @log 'initialize'
 
     _setup.call @
 

@@ -24,7 +24,7 @@ class _VIEWS.ProfileView extends _VIEWS.BaseView
     
     super properties, @onReady
 
-    @log 'init'
+    @log 'initialize'
 
     _setup.call @
 

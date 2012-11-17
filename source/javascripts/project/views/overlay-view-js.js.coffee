@@ -19,7 +19,7 @@ class _VIEWS.OverlayView extends _VIEWS.BaseView
     
     super properties, @onReady
 
-    @log 'init'
+    @log 'initialize'
 
     @ready()
 

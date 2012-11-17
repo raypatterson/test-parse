@@ -4,27 +4,35 @@ _VIEWS = @__get_project_namespace__ [ 'Views' ]
 
 _log = _NS.log "Views"
 
-_mainModel = undefined
-_eventBus = undefined
-_eventType = undefined
+_tempView = new _VIEWS.BaseView
 
-_initView = (id, View, callback) ->
+# _initView = (id, View, callback, views) ->
+
+#   _log 'View Init'
+
+#   properties = 
+#     id : id
+#     el : $ "##{id}"
+
+#   if views then properties.views = views
+
+#   new View properties, ->
+
+#     _VIEWS[id] = @
+
+#     _log '--- View Rendered ---', @, '--- View Rendered ---'
+    
+#     callback()
+
+#     @
+    
+#   @
+
+_initView = (id, callback, views) ->
 
   _log 'View Init'
 
-  properties = 
-    id : id
-    el : $ "##{id}"
-
-  new View properties, ->
-
-    _VIEWS[id] = @
-
-    _log '--- View Rendered ---', @, '--- View Rendered ---'
-    
-    callback()
-
-    @
+  _tempView.addView id, callback, views
     
   @
 
@@ -47,20 +55,35 @@ _init = (callback) ->
   @
   
 _initOverlayView = (callback) ->
-  _initView 'overlay-view', _VIEWS.OverlayView, callback
+  _initView 'overlay-view', callback
+  # _initView 'overlay-view', _VIEWS.OverlayView, callback
   @  
   
 _initHeaderView = (callback) ->
-  _initView 'header-view', _VIEWS.HeaderView, callback
+  _initView 'header-view', callback
+  # _initView 'header-view', _VIEWS.HeaderView, callback
   @  
 
 _initMainView = (callback) ->
   _log 'Main View'
-  _initView 'main-view', _VIEWS.MainView, callback
+
+  views = [ 
+      id : 'upload-view' 
+      views : [
+        id : 'help-view' 
+      ,
+        id : 'show-view'
+      ]
+    ]
+
+  _initView 'main-view', callback, views
+  # _initView 'main-view', _VIEWS.MainView, callback, views
+
   @  
 
 _initFooterView = (callback) ->
-  _initView 'footer-view', _VIEWS.FooterView, callback
+  _initView 'footer-view', callback
+  # _initView 'footer-view', _VIEWS.FooterView, callback
   @
   
 _ob = @__get_project_namespace__ [ "Startup" ]
