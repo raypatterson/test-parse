@@ -24,7 +24,7 @@ class _VIEWS.HelpView extends _VIEWS.BaseView
 
     super properties, @onReady
 
-    @log 'initialize'
+    # @log 'initialize'
 
     @ready()
 

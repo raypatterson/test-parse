@@ -8,7 +8,7 @@ _setup = ->
 
   $form = $ '#upload-view form'
 
-  @log '$form', $form
+  # @log '$form', $form
   
   $form.submit ( event ) =>
     event.preventDefault()
@@ -39,7 +39,7 @@ class _VIEWS.UploadView extends _VIEWS.BaseView
     
     super properties, @onReady
 
-    @log 'initialize'
+    # @log 'initialize'
     
     @
 

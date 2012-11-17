@@ -8,7 +8,7 @@ class _VIEWS.FooterView extends _VIEWS.BaseView
     
     super properties, @onReady
 
-    @log 'initialize'
+    # @log 'initialize'
     
     @ready()
     

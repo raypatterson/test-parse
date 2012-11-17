@@ -47,15 +47,15 @@ _setupItems = (callback) ->
 
       model = new _MODELS.ItemModel item, =>
         itemsReady++
-        @log "#{itemsReady} ready, #{itemsTotal} total"
+        # @log "#{itemsReady} ready, #{itemsTotal} total"
         if itemsReady is itemsTotal
-          @log '>>> All models are ready'
+          # @log '>>> All models are ready'
           callback()
         
       collection.add model
     
   else
-    @log '> Model has no items'
+    # @log '> Model has no items'
     callback()
 
   @

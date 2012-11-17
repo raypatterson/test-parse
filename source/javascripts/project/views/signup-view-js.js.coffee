@@ -68,7 +68,7 @@ class _VIEWS.SignupView extends _VIEWS.BaseView
     
     super properties, @onReady
 
-    @log 'initialize'
+    # @log 'initialize'
 
     _setup.call @
 

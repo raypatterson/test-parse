@@ -43,7 +43,7 @@ class _VIEWS.BaseView extends Backbone.View
     @className = if @el then "#{@className} ##{@el.id}" or "#{@className} .#{el.className}" else @className
     @log = _NS.log @className
     
-    @log 'setup'
+    # @log 'setup'
 
     @ROUTER = _NS.navigationRouter
     @EVENTBUS = _NS.eventBus
@@ -55,7 +55,7 @@ class _VIEWS.BaseView extends Backbone.View
     @
   
   init : ->
-    @log 'init'
+    # @log 'init'
 
     if @options.views then @addViews @options.views, => @ready()
 
@@ -93,9 +93,9 @@ class _VIEWS.BaseView extends Backbone.View
     @
 
   addViews : ( views, callback ) ->
-    @log 'addViews'
+    # @log 'addViews'
 
-    @log views
+    # @log views
 
     i = 0
     I = views.length
